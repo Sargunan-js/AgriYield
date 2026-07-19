@@ -1,9 +1,13 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Upload from './pages/Upload';
+
 function App() {
   return (
-    <div>
-      <h1>AgriYield</h1>
-      <p>AI-driven crop disease detection & yield forecasting</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Upload />} />
+      </Routes>
+    </Router>
   );
 }
 
