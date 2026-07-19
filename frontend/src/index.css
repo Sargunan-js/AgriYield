@@ -33,3 +33,17 @@ button:hover {
 h1 , h2, h3 {
     font-family: 'Poppins', sans-serif;
 }
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px !important;
+  }
+
+  h1 {
+    font-size: 26px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+}
