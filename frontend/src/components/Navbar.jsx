@@ -1,0 +1,22 @@
+import { Link } from 'react-router-dom';
+
+function Navbar() {
+  return (
+    <nav style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: '15px 30px',
+      backgroundColor: '#2e7d32',
+      color: 'white'
+    }}>
+      <h2 style={{ margin: 0 }}>🌾 AgriYield</h2>
+      <div style={{ display: 'flex', gap: '20px' }}>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
+        <Link to="/upload" style={{ color: 'white', textDecoration: 'none' }}>Upload</Link>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
