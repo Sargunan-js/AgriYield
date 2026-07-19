@@ -5,8 +5,9 @@
 }
 
 body {
-  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-  background-color: #f4f7f2;
+  font-family: 'inter','Segoe UI',sans-serif;
+  background-color: linear-gradient(135deg, #f4f7f2 ,#e8f5e9 100%);
+  min-height: 100vh;
   color: #1b1b1b;
 }
 
@@ -27,4 +28,8 @@ button {
 button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+h1 , h2, h3 {
+    font-family: 'Poppins', sans-serif;
 }

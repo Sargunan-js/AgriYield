@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Upload() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [preview, setPreview] = useState(null);
+  const [analyzing, setAnalyzing] = useState(false);
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -17,7 +20,11 @@ function Upload() {
       alert("Please select an image first");
       return;
     }
-    console.log("Image ready to send to backend:", selectedImage);
+    setAnalyzing(true);
+    // Simulates AI processing time (later this becomes real API call)
+    setTimeout(() => {
+      navigate('/dashboard');
+    }, 1800);
   };
 
   return (
@@ -52,21 +59,24 @@ function Upload() {
             <img src={preview} alt="preview" style={{
               width: '250px',
               borderRadius: '10px',
-              boxShadow: '0 2px 10px rgba(0,0,0,0.15)'
+              boxShadow: '0 2px 10px rgba(0,0,0,0.15)',
+              opacity: analyzing ? 0.6 : 1,
+              transition: 'opacity 0.3s'
             }} />
           </div>
         )}
 
         <br />
-        <button onClick={handleSubmit} style={{
+        <button onClick={handleSubmit} disabled={analyzing} style={{
           marginTop: '20px',
           padding: '12px 30px',
-          backgroundColor: '#2e7d32',
+          backgroundColor: analyzing ? '#81c784' : '#2e7d32',
           color: 'white',
           fontSize: '15px',
-          borderRadius: '25px'
+          borderRadius: '25px',
+          cursor: analyzing ? 'not-allowed' : 'pointer'
         }}>
-          🔍 Analyze Image
+          {analyzing ? '🔄 Analyzing...' : '🔍 Analyze Image'}
         </button>
       </div>
     </div>

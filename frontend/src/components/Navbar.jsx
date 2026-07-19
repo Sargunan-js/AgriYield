@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Sprout, Home as HomeIcon, Upload as UploadIcon, LayoutDashboard } from 'lucide-react';
 
 function Navbar() {
   return (
@@ -14,12 +15,19 @@ function Navbar() {
       top: 0,
       zIndex: 100
     }}>
-      <h2 style={{ margin: 0, fontSize: '22px', letterSpacing: '0.5px' }}>
-        🌾 AgriYield
+      <h2 style={{ margin: 0, fontSize: '22px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <Sprout size={24} /> AgriYield
       </h2>
-      <div style={{ display: 'flex', gap: '30px', fontSize: '15px' }}>
-        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Home</Link>
-        <Link to="/upload" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Upload</Link>
+      <div style={{ display: 'flex', gap: '25px', fontSize: '15px' }}>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <HomeIcon size={18} /> Home
+        </Link>
+        <Link to="/upload" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <UploadIcon size={18} /> Upload
+        </Link>
+        <Link to="/dashboard" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <LayoutDashboard size={18} /> Dashboard
+        </Link>
       </div>
     </nav>
   );
